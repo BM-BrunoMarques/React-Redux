@@ -1,14 +1,13 @@
 import React from 'react'
-import {connect} from 'react-Redux'
+import { connect } from 'react-redux'
 import List from './List'
-import{
+import {
   handleAddTodo,
-  handleDeleteTodo
-  handleToggle,
-} from '..actions/todos'
+  handleDeleteTodo,
+  handleToggle
+} from '../actions/todos'
 
 class Todos extends React.Component {
-
   addItem = (e) => {
     e.preventDefault()
 
@@ -17,18 +16,14 @@ class Todos extends React.Component {
       () => this.input.value = ''
     ))
   }
-
-
   removeItem = (todo) => {
     this.props.dispatch(handleDeleteTodo(todo))
   }
-
   toggleItem = (id) => {
-    this.props.dispatch(handleToggleTodo(id))
+    this.props.dispatch(handleToggle(id))
   }
-
-  render(){
-    return(
+  render() {
+    return (
       <div>
         <h1>Todo List</h1>
         <input
@@ -38,6 +33,11 @@ class Todos extends React.Component {
         />
         <button onClick={this.addItem}>Add Todo</button>
 
+        <List
+          toggle={this.toggleItem}
+          items={this.props.todos}
+          remove={this.removeItem}
+        />
       </div>
     )
   }

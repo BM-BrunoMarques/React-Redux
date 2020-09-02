@@ -1,8 +1,8 @@
 import{
   RECEIVE_DATA
-} from '../actions/loading'
+} from '../actions/shared'
 
-function loading (state = true, action) {
+export default function loading (state = true, action) {
   switch (action.type){
     case RECEIVE_DATA:
       return false

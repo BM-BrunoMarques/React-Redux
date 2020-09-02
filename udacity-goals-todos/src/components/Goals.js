@@ -2,8 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import List from './List'
 import{
-  handleAddGoal
-  handleDeleteGoal
+  handleAddGoal,
+  handleDeleteGoal,
 } from '../actions/goals'
 
 class Goals extends React.Component {

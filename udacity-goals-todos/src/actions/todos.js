@@ -40,7 +40,7 @@ export function handleAddTodo(name, cb){
   }
 }
 
-export function handleToggleTodo (id) {
+export function handleToggle (id) {
   return (dispatch) => {
     dispatch(toggleTodo(id))
 
